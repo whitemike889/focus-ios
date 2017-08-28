@@ -1,4 +1,10 @@
 /* (No Commment) */
+"CFBundleName" = "$(PRODUCT_NAME)";
+
+/* (No Commment) */
+"CFBundleShortVersionString" = "3.6";
+
+/* (No Commment) */
 "NSCameraUsageDescription" = "Hierdie laat mens foto’s neem en oplaai.";
 
 /* (No Commment) */

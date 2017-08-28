@@ -25,6 +25,7 @@
 		5AFDBB0CF3A9FBA175D2B693 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427B752EF11959F9C38B12D6 /* AVFoundation.framework */; };
 		6616A36F1BD17EFA00C7E493 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6616A36E1BD17EFA00C7E493 /* style.css */; };
 		742C99D41F3A3AD200717D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742C99D31F3A3AD200717D69 /* Assets.xcassets */; };
+		745742A61F5603F200F2C8C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 745742A81F5603F200F2C8C3 /* InfoPlist.strings */; };
 		745DC5DD1F39221100661635 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745DC5DC1F39221100661635 /* ActionViewController.swift */; };
 		745DC5E41F39221100661635 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 745DC5DA1F39221100661635 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7460BD671F58B1B10096B745 /* GradientProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460BD661F58B1B10096B745 /* GradientProgressBar.swift */; };
@@ -261,6 +262,7 @@
 		7449B17E1F291D77001A199D /* uz */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uz; path = uz.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7449B17F1F291D77001A199D /* uz */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uz; path = uz.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7449B1801F291D77001A199D /* uz */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uz; path = uz.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		745742A71F5603F200F2C8C3 /* af */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = af; path = af.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		745DC5DA1F39221100661635 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		745DC5DC1F39221100661635 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		745DC5E11F39221100661635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -691,6 +693,7 @@
 		745DC5DB1F39221100661635 /* OpenInFocus */ = {
 			isa = PBXGroup;
 			children = (
+				745742A81F5603F200F2C8C3 /* InfoPlist.strings */,
 				745DC5DC1F39221100661635 /* ActionViewController.swift */,
 				745DC5E11F39221100661635 /* Info.plist */,
 				742C99D31F3A3AD200717D69 /* Assets.xcassets */,
@@ -1338,6 +1341,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		745742A81F5603F200F2C8C3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				745742A71F5603F200F2C8C3 /* af */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		D343DCC41C44356500D7EEE8 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

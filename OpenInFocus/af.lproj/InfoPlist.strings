@@ -1,0 +1,9 @@
+/* (No Commment) */
+"CFBundleDisplayName" = "$(DISPLAY_NAME)";
+
+/* (No Commment) */
+"CFBundleName" = "$(PRODUCT_NAME)";
+
+/* (No Commment) */
+"CFBundleShortVersionString" = "3.6";
+

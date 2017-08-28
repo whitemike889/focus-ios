@@ -21,6 +21,7 @@ class SnapshotTests: XCTestCase {
         snapshot("01Home")
 
         snapshot("02LocationBarEmptyState")
+        waitforExistence(element: app.textFields["URLBar.urlText"])
         app.textFields["URLBar.urlText"].typeText("bugzilla.mozilla.org")
         snapshot("03SearchFor")
 
@@ -40,7 +41,13 @@ class SnapshotTests: XCTestCase {
         app.swipeUp()
         snapshot("07Settings")
         app.swipeDown()
-        app.cells["SettingsViewController.searchCell"].tap()
+
+        // if iPhone 5 do something different
+        if max(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height) <= 480 {
+            app.cells["SettingsViewController.searchCell"].doubleTap()
+        } else {
+            app.cells["SettingsViewController.searchCell"].tap()
+        }
         snapshot("08SettingsSearchEngine")
         app.navigationBars.element(boundBy: 0).buttons.element(boundBy: 0).tap()
         app.swipeUp()
@@ -76,25 +83,34 @@ class SnapshotTests: XCTestCase {
         let app = XCUIApplication()
         app.textFields["URLBar.urlText"].typeText("maps.apple.com\n")
         waitForValueContains(element: app.textFields["URLBar.urlText"], value: "http://maps.apple.com")
-        snapshot("06OpenMaps")
+        snapshot("14OpenMaps")
     }
 
     func test07OpenAppStore() {
         let app = XCUIApplication()
         app.textFields["URLBar.urlText"].typeText("itunes.apple.com\n")
         waitForValueContains(element: app.textFields["URLBar.urlText"], value: "http://itunes.apple.com")
-        snapshot("07OpenAppStore")
+        snapshot("15OpenAppStore")
     }
 
     func test08PasteAndGo() {
         let app = XCUIApplication()
         app.textFields["URLBar.urlText"].typeText("mozilla.org\n")
-        app.textFields["URLBar.urlText"].tap(withNumberOfTaps: 3, numberOfTouches: 1)
+        app.textFields["URLBar.urlText"].tap()
+        app.textFields["URLBar.urlText"].doubleTap()
         app.menuItems.element(boundBy: 1).tap()
         app.buttons.element(boundBy: 1).tap()
         app.buttons["URLBar.deleteButton"].tap()
         app.textFields["URLBar.urlText"].tap()
-        snapshot("08PasteAndGo")
+        snapshot("16PasteAndGo")
+    }
+
+    func test09SaveImage() {
+        let app = XCUIApplication()
+        app.textFields["URLBar.urlText"].typeText("https://www.google.com/search?client=firefox-b&biw=414&bih=618&tbm=isch&sa=1&ei=KwmlWfb9Ksbn0gL5pZHIDA&q=long+vertical+image&oq=long+vertical+image&gs_l=mobile-gws-img.3..0.9930.14151.0.14365.27.24.0.0.0.0.291.4225.0j13j9.22.0....0...1..64.mobile-gws-img..10.17.3057...0i67k1.mvYiZJZlbQ8\n")
+        app.tap()
+        app.press(forDuration: 3)
+        snapshot("17SaveImage")
     }
 
     func waitForValueContains(element:XCUIElement, value:String, file: String = #file, line: UInt = #line) {
