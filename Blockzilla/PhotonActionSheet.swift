@@ -326,18 +326,14 @@ class PhotonActionSheet: UIViewController, UITableViewDelegate, UITableViewDataS
         
         // A header height of at least 1 is required to make sure the default header size isnt used when laying out with AutoLayout
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "EmptyHeader")
-        view?.snp.makeConstraints { make in
-            make.height.equalTo(1)
-        }
+        view?.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
         return view
     }
-    
+
     // A footer height of at least 1 is required to make sure the default footer size isnt used when laying out with AutoLayout
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "EmptyHeader")
-        view?.snp.makeConstraints { make in
-            make.height.equalTo(1)
-        }
+        view?.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
         return view
     }
 }
